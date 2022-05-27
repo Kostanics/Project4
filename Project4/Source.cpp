@@ -2,25 +2,25 @@
 using namespace std;
 
 void sorty(const int n) {
+    int comparisonsCount = 0;
     int x;
-    int position = 0;
     int* arr = new int[n];
-    for (int i = 0; i < n; i++){
-        arr[i] = rand() % n; 
-        cout << arr[i] << "  ";
+    for (int i = 0; i < n; i++) {
+        arr[i] = rand() % n;
+        //cout << arr[i] << "  ";
     }
     cout << endl;
-    cout << "Find: "; 
+    cout << "Find: ";
     cin >> x;
-    if (arr[n - 1] != x){
-        arr[n - 1] = x;
-        for (; arr[position] != x; position++);
-        position++;
+    for (int i = 0; i < n; i++)
+    {
+        comparisonsCount++;
+        if (arr[i] == x) {
+            cout << "position: " << i << endl;
+            break;
+        }
     }
-    else{
-        cout << n;
-    }
-    cout << "position: " << position;
+    cout << "number of comparisons:" << comparisonsCount << endl;
 }
 int main()
 {
